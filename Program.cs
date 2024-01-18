@@ -36,24 +36,24 @@
 //task2 Наzовем число “интересным” , если сумма цифр четная. Создать двумерный массив ,
 // состоящий из целых чисел.
 //Вывести на экран”интересные” эл. массива.
-Random random = new Random();
-int rowCount = random.Next(2,4);
-int cellCount = random.Next(2,7);
-int [,] myTable = GetTableOfInts(rowCount , cellCount);
-PrintTable(myTable);
-System.Console.WriteLine();
-int Sum ;
-for(int i=0 ; i< myTable.GetLength(0) ; i++)
-{
-    for(int j=0 ; j< myTable.GetLength(1) ; j++)
-    {
-      Sum = GetSumOfDigits(myTable[i,j]);
-      if(IsEven(Sum))
-      {
-        System.Console.Write(myTable[i,j] + "\t");
-      }
-    }
-}
+// Random random = new Random();
+// int rowCount = random.Next(2,4);
+// int cellCount = random.Next(2,7);
+// int [,] myTable = GetTableOfInts(rowCount , cellCount);
+// PrintTable(myTable);
+// System.Console.WriteLine();
+// int Sum ;
+// for(int i=0 ; i< myTable.GetLength(0) ; i++)
+// {
+//     for(int j=0 ; j< myTable.GetLength(1) ; j++)
+//     {
+//       Sum = GetSumOfDigits(myTable[i,j]);
+//       if(IsEven(Sum))
+//       {
+//         System.Console.Write(myTable[i,j] + "\t");
+//       }
+//     }
+// }
 
 int GetSumOfDigits(int number)
 {
@@ -74,5 +74,29 @@ bool IsEven(int value)
     }
     return isEven;
 }
+
+// Задача 3: Считать с консоли строку , состоящую из цыфр и латинских букв.
+// Сформировать новую строку из букв исходной строки.
+string GetStringFromConsole()
+{
+    System.Console.WriteLine("Enter the string");
+    string str = Console.ReadLine();
+    return str;
+}
+string GetLetterFromString (string str)
+{
+    string Letters = "";
+    foreach (char e in str)
+    {
+        if(char.IsAsciiLetter(e) == true)
+        {
+            Letters = Letters + e;
+        }
+    }
+    return Letters;
+}
+string myStr = GetStringFromConsole();
+string myOnlyLetters = GetLetterFromString(myStr);
+System.Console.WriteLine(myOnlyLetters);
 
 
