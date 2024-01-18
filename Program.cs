@@ -137,11 +137,21 @@ foreach(char e in str)
 return Numbers;
 }
 string onlyNumbers = GetNumbersInString(mySTR);
-int [] myArray = new int[CountOfDigitsInString(str)];
+int [] myArray = new int[CountOfDigitsInString(mySTR)];
 int Num = Convert.ToInt32(onlyNumbers);
-int [] GetArrayFromDigitsOfNum(int Num)
+int [] GetArrayFromDigitsOfNum(int Num , int [] yourArray)
 {
-    
+ int i = 0;
+    while(Num > 0)
+    {
+        yourArray[i] = Num %10;
+        Num = Num / 10 ; 
+        i++;
+
+    }
+    return yourArray;
 }
+GetArrayFromDigitsOfNum(Num , myArray);
+PrintArray(myArray);
 
     
