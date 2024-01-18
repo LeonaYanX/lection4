@@ -95,8 +95,53 @@ string GetLetterFromString (string str)
     }
     return Letters;
 }
-string myStr = GetStringFromConsole();
-string myOnlyLetters = GetLetterFromString(myStr);
-System.Console.WriteLine(myOnlyLetters);
+// string myStr = GetStringFromConsole();
+// string myOnlyLetters = GetLetterFromString(myStr);
+// System.Console.WriteLine(myOnlyLetters);
 
+// ДЗ: Считать с консоли строку из цифр и латинских букв , сформировать массив состоящий из
+//  цыфр этой строки, с функциями и под массив место не болше чем количество чисел.
+string mySTR = GetStringFromConsole();
+void PrintArray(int [] array)
+{
+    for(int i=0 ; i< array.Length ; i++)
+    {
+        System.Console.Write(array[i] + " ");
+    }
+}
+int CountOfDigitsInString (string str)
+{
+    int CountOfints = 0;
+    foreach(char e in str)
+    {
+        if(char.IsAsciiLetter(e)==false)
+        {
+            CountOfints +=1;
+            
+        }
 
+    }
+    
+    return CountOfints;
+}
+string  GetNumbersInString (string str)
+{
+string Numbers = "";
+foreach(char e in str)
+{ 
+    if(char.IsAsciiLetter(e)==false)
+    {
+        Numbers = Numbers + e; 
+    }
+}
+return Numbers;
+}
+string onlyNumbers = GetNumbersInString(mySTR);
+int [] myArray = new int[CountOfDigitsInString(str)];
+int Num = Convert.ToInt32(onlyNumbers);
+int [] GetArrayFromDigitsOfNum(int Num)
+{
+    
+}
+
+    
